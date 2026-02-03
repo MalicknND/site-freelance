@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" fill="none"><rect width="600" height="400" fill="hsl(var(--muted))" rx="8"/><path fill="hsl(var(--muted-foreground)/0.3)" d="M300 180c-33 0-60 27-60 60s27 60 60 60 60-27 60-60-27-60-60-60zm0 100c-22 0-40-18-40-40s18-40 40-40 40 18 40 40-18 40-40 40z"/></svg>
