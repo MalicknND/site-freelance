@@ -6,25 +6,35 @@ import {
   StaggerItem,
 } from "@/components/animated/MotionWrapper";
 import { processSteps } from "@/lib/data/services";
+import { PROCESS_REASSURANCE } from "@/lib/data/landing";
 
 export function ProcessSection() {
   return (
-    <section className="py-24 md:py-32">
+    <section
+      id="process"
+      className="py-24 md:py-32 bg-muted/20"
+      aria-labelledby="process-heading"
+    >
       <div className="container">
         <MotionWrapper className="text-center mb-16">
           <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-            Processus
+            Process
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Une méthodologie <span className="text-gradient">éprouvée</span>
+          <h2
+            id="process-heading"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+          >
+            Comment on <span className="text-gradient">travaille</span> ensemble
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Un processus clair et transparent pour mener votre projet du concept
-            à la livraison.
+            Un cadre clair de la première idée à la mise en ligne.
           </p>
         </MotionWrapper>
         <StaggerContainer staggerDelay={0.15} className="relative">
-          <div className="absolute top-8 left-1/2 -translate-x-1/2 w-[calc(100%-4rem)] h-0.5 bg-gradient-to-r from-transparent via-border to-transparent hidden lg:block" />
+          <div
+            className="absolute top-8 left-1/2 -translate-x-1/2 w-[calc(100%-4rem)] h-0.5 bg-gradient-to-r from-transparent via-border to-transparent hidden lg:block"
+            aria-hidden
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <StaggerItem key={step.step}>
@@ -35,7 +45,10 @@ export function ProcessSection() {
                     </span>
                   </div>
                   {index < processSteps.length - 1 && (
-                    <div className="absolute top-8 left-[calc(50%+3rem)] w-[calc(100%-6rem)] hidden lg:flex items-center justify-between">
+                    <div
+                      className="absolute top-8 left-[calc(50%+3rem)] w-[calc(100%-6rem)] hidden lg:flex items-center justify-between"
+                      aria-hidden
+                    >
                       {[...Array(3)].map((_, i) => (
                         <div
                           key={i}
@@ -53,6 +66,11 @@ export function ProcessSection() {
             ))}
           </div>
         </StaggerContainer>
+        <MotionWrapper delay={0.3} className="mt-12 text-center">
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto italic">
+            {PROCESS_REASSURANCE}
+          </p>
+        </MotionWrapper>
       </div>
     </section>
   );

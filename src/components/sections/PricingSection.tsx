@@ -13,13 +13,20 @@ import { cn } from "@/lib/utils";
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-24 md:py-32 bg-muted/20">
+    <section
+      id="pricing"
+      className="py-24 md:py-32 bg-muted/20"
+      aria-labelledby="pricing-heading"
+    >
       <div className="container">
         <MotionWrapper className="text-center mb-16">
           <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
             Tarifs
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2
+            id="pricing-heading"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+          >
             Des offres <span className="text-gradient">transparentes</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -51,14 +58,9 @@ export function PricingSection() {
                   <p className="text-muted-foreground text-sm mb-4">
                     {plan.description}
                   </p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-sm text-muted-foreground">
-                      À partir de
-                    </span>
-                    <span className="text-3xl font-bold text-gradient">
-                      {plan.priceFrom}
-                    </span>
-                  </div>
+                  <p className="text-2xl md:text-3xl font-bold text-gradient">
+                    {plan.priceFrom}
+                  </p>
                 </div>
                 <ul className="space-y-3 mb-8 flex-grow">
                   {plan.features.map((feature, idx) => (

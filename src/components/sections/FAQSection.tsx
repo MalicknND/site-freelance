@@ -11,13 +11,16 @@ import { faqItems } from "@/lib/data/projects";
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-24 md:py-32">
+    <section id="faq" className="py-24 md:py-32" aria-labelledby="faq-heading">
       <div className="container max-w-3xl">
         <MotionWrapper className="text-center mb-16">
           <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
             FAQ
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2
+            id="faq-heading"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+          >
             Questions <span className="text-gradient">fréquentes</span>
           </h2>
           <p className="text-muted-foreground text-lg">

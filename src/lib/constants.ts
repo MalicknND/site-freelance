@@ -2,27 +2,30 @@ export const SITE_CONFIG = {
   name: "Malick Siguy NDIAYE",
   title: "Développeur Web Freelance",
   description:
-    "Développeur Web Freelance spécialisé React, Next.js et Node.js. Je crée des applications web performantes et des sites vitrines premium.",
+    "Développeur web freelance : sites et applications performants pour indépendants, PME et startups. Réservez un appel gratuit.",
   email: "ndiayemalicksiguy@gmail.com",
   portfolio: "https://portfolio.msndiaye.com",
   calendly: "https://calendly.com/placeholder",
   positioning: "Développeur Web Freelance – React / Next.js / Node.js",
 };
 
-export const NAV_LINKS = [
-  { label: "Accueil", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "À propos", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
-export const SECTION_ANCHORS = [
+/** Ancres de la landing (navbar + smooth scroll) */
+export const LANDING_ANCHORS = [
   { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Témoignages", href: "#testimonials" },
   { label: "Tarifs", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact" },
 ];
+
+/** Badges crédibilité Hero (4 tech) */
+export const TECH_STACK_HERO = [
+  { name: "React" },
+  { name: "Next.js" },
+  { name: "TypeScript" },
+  { name: "Node.js" },
+] as const;
 
 export const TECH_STACK = [
   { name: "React" },
@@ -36,5 +39,5 @@ export const TECH_STACK = [
 export const SOCIAL_LINKS = {
   github: "https://github.com",
   linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
+  portfolio: "https://portfolio.msndiaye.com",
 };

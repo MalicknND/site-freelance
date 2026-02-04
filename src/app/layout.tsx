@@ -13,16 +13,19 @@ export const metadata: Metadata = {
   },
   description: SITE_CONFIG.description,
   keywords: [
-    "développeur web",
-    "freelance",
+    "développeur web freelance",
+    "site vitrine",
+    "landing page",
+    "MVP",
     "React",
     "Next.js",
     "TypeScript",
-    "Node.js",
   ],
   authors: [{ name: SITE_CONFIG.name, url: SITE_CONFIG.portfolio }],
   openGraph: {
     type: "website",
+    title: `${SITE_CONFIG.name} – ${SITE_CONFIG.title}`,
+    description: SITE_CONFIG.description,
   },
 };
 

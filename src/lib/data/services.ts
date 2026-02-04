@@ -3,7 +3,7 @@ import {
   Rocket,
   RefreshCw,
   Settings,
-  Plug,
+  Megaphone,
   type LucideIcon,
 } from "lucide-react";
 
@@ -11,144 +11,101 @@ export interface Service {
   id: string;
   icon: LucideIcon;
   title: string;
-  description: string;
-  benefits: string[];
-  deliverables: string[];
+  pourQui: string;
+  deliverables: [string, string, string];
   timeline: string;
-  priceFrom: string;
 }
 
 export const services: Service[] = [
   {
     id: "site-vitrine",
     icon: Code2,
-    title: "Site Vitrine Premium",
-    description:
-      "Un site web moderne et performant qui valorise votre image de marque et convertit vos visiteurs en clients.",
-    benefits: [
-      "Design sur-mesure et responsive",
-      "Optimisé SEO dès la conception",
-      "Performance optimale (Core Web Vitals)",
-      "Animations et interactions soignées",
-    ],
+    title: "Site vitrine premium",
+    pourQui:
+      "Professionnels et petites structures qui veulent une présence web soignée et performante.",
     deliverables: [
-      "Code source complet",
-      "Hébergement configuré",
-      "Documentation technique",
-      "Formation utilisation",
+      "Code source complet et hébergement configuré",
+      "Design responsive et optimisé SEO",
+      "Documentation et formation à l’utilisation",
     ],
     timeline: "2-3 semaines",
-    priceFrom: "1 500€",
+  },
+  {
+    id: "landing-ads",
+    icon: Megaphone,
+    title: "Landing page Ads (conversion)",
+    pourQui:
+      "Campagnes Google / Meta : une page dédiée pour convertir les clics en leads ou ventes.",
+    deliverables: [
+      "Page unique optimisée taux de conversion",
+      "Intégration analytics et suivi des objectifs",
+      "Formulaire ou tunnel adapté à votre offre",
+    ],
+    timeline: "1-2 semaines",
   },
   {
     id: "application-web",
     icon: Rocket,
-    title: "Application Web (MVP)",
-    description:
-      "Développement de votre MVP avec les dernières technologies pour valider rapidement votre concept.",
-    benefits: [
-      "Architecture scalable",
-      "Interface utilisateur intuitive",
-      "Base de données optimisée",
-      "API REST/GraphQL",
-    ],
+    title: "Application web / MVP",
+    pourQui:
+      "Startups et porteurs de projet qui veulent lancer un produit testable rapidement.",
     deliverables: [
-      "Application fonctionnelle",
-      "Dashboard admin",
-      "Documentation API",
-      "Tests automatisés",
+      "Application fonctionnelle (front + back si besoin)",
+      "Dashboard admin si utile",
+      "Documentation technique et déploiement",
     ],
     timeline: "4-8 semaines",
-    priceFrom: "3 500€",
   },
   {
-    id: "refonte-performance",
+    id: "refonte-perf",
     icon: RefreshCw,
-    title: "Refonte & Performance",
-    description:
-      "Modernisation de votre site existant avec amélioration des performances et du SEO.",
-    benefits: [
-      "Audit complet gratuit",
-      "Amélioration du score Lighthouse",
-      "Migration sans perte de données",
-      "Nouveau design moderne",
-    ],
+    title: "Refonte & optimisation performance / SEO",
+    pourQui: "Sites existants lents, mal référencés ou au design daté.",
     deliverables: [
-      "Rapport d'audit détaillé",
-      "Site optimisé",
-      "Redirections SEO",
-      "Monitoring performance",
+      "Audit et rapport d’optimisation",
+      "Refonte technique et design moderne",
+      "Redirections SEO et suivi performance",
     ],
     timeline: "2-4 semaines",
-    priceFrom: "2 000€",
   },
   {
     id: "maintenance",
     icon: Settings,
-    title: "Maintenance & Évolutions",
-    description:
-      "Support continu et développement de nouvelles fonctionnalités pour faire évoluer votre projet.",
-    benefits: [
-      "Support prioritaire",
-      "Mises à jour de sécurité",
-      "Évolutions mensuelles",
-      "Monitoring 24/7",
-    ],
+    title: "Maintenance & évolutions",
+    pourQui:
+      "Projets déjà livrés : mises à jour, correctifs et petites évolutions dans la durée.",
     deliverables: [
-      "Rapport mensuel",
-      "Backups automatiques",
-      "Hotfixes inclus",
-      "Roadmap évolutive",
+      "Mises à jour de sécurité et dépendances",
+      "Corrections de bugs et petits ajouts",
+      "Rapport d’activité et suivi (selon forfait)",
     ],
     timeline: "Forfait mensuel",
-    priceFrom: "300€/mois",
-  },
-  {
-    id: "integration-api",
-    icon: Plug,
-    title: "Intégration API & Auth",
-    description:
-      "Connexion de services tiers et mise en place d'authentification sécurisée.",
-    benefits: [
-      "Intégration Stripe, Clerk, Supabase",
-      "OAuth & SSO",
-      "Webhooks personnalisés",
-      "Sécurité renforcée",
-    ],
-    deliverables: [
-      "API intégrée",
-      "Documentation technique",
-      "Tests d'intégration",
-      "Gestion des erreurs",
-    ],
-    timeline: "1-2 semaines",
-    priceFrom: "800€",
   },
 ];
 
 export const processSteps = [
   {
     step: 1,
-    title: "Audit & Découverte",
+    title: "Cadrage",
     description:
-      "Analyse de vos besoins, objectifs et contraintes pour définir le périmètre optimal.",
+      "Définition des objectifs, du périmètre et du planning. On valide ensemble la cible et les livrables.",
   },
   {
     step: 2,
-    title: "Design & Prototypage",
+    title: "Design / structure",
     description:
-      "Création des maquettes et validation du design avant développement.",
+      "Maquettes ou structure des écrans et validation du design avant de coder.",
   },
   {
     step: 3,
     title: "Développement",
     description:
-      "Codage itératif avec points réguliers pour valider l'avancement.",
+      "Réalisation par sprints avec des points réguliers pour valider l’avancement.",
   },
   {
     step: 4,
-    title: "Livraison & Support",
+    title: "Livraison & accompagnement",
     description:
-      "Mise en production, formation et accompagnement post-lancement.",
+      "Mise en production, formation si besoin et suivi post-lancement.",
   },
 ];

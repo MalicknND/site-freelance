@@ -5,7 +5,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SpotlightBackground } from "@/components/animated/SpotlightBackground";
 import { AvailabilityBadge } from "@/components/ui/availability-badge";
-import { SITE_CONFIG, TECH_STACK } from "@/lib/constants";
+import { SITE_CONFIG, TECH_STACK_HERO } from "@/lib/constants";
 import { TechStackIcons } from "@/components/icons/TechIcons";
 
 export function HeroSection() {
@@ -30,9 +30,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
           >
-            Je crée des <span className="text-gradient">applications web</span>
+            Des <span className="text-gradient">sites et applications web</span>
             <br />
-            qui font la différence
+            qui convertissent et performent
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -40,9 +40,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            {SITE_CONFIG.positioning}. Sites vitrines premium, applications sur
-            mesure et solutions performantes pour transformer vos idées en
-            réalité.
+            Pour indépendants, PME et startups : je conçois et développe votre
+            site vitrine, landing page ou MVP avec des technologies modernes et
+            un suivi clair, pour des résultats mesurables.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -79,10 +79,8 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-wrap items-center justify-center gap-3"
           >
-            <span className="text-sm text-muted-foreground mr-2">
-              Tech Stack :
-            </span>
-            {TECH_STACK.map((tech, index) => {
+            <span className="text-sm text-muted-foreground mr-2">Stack :</span>
+            {TECH_STACK_HERO.map((tech, index) => {
               const IconComponent = TechStackIcons[tech.name];
               return (
                 <motion.div
@@ -109,13 +107,14 @@ export function HeroSection() {
         >
           <button
             onClick={scrollToServices}
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Scroll to services"
+            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+            aria-label="Découvrir les services"
           >
             <span className="text-xs">Découvrir</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
+              aria-hidden
             >
               <ChevronDown className="h-5 w-5" />
             </motion.div>

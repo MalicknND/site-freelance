@@ -1,6 +1,11 @@
 "use client";
 
-import { motion, type Variants, type HTMLMotionProps } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type Variants,
+  type HTMLMotionProps,
+} from "framer-motion";
 import { type ReactNode } from "react";
 
 interface MotionWrapperProps extends HTMLMotionProps<"div"> {
@@ -30,12 +35,17 @@ export function MotionWrapper({
   variant = "fadeInUp",
   ...props
 }: MotionWrapperProps) {
+  const shouldReduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial="hidden"
+      initial={shouldReduceMotion ? "visible" : "hidden"}
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration, delay, ease: "easeOut" }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : duration,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: "easeOut",
+      }}
       variants={variants[variant]}
       {...props}
     >
@@ -53,12 +63,13 @@ export function StaggerContainer({
   staggerDelay?: number;
   className?: string;
 }) {
+  const shouldReduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial="hidden"
+      initial={shouldReduceMotion ? "visible" : "hidden"}
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ staggerChildren: staggerDelay }}
+      transition={{ staggerChildren: shouldReduceMotion ? 0 : staggerDelay }}
       className={className}
     >
       {children}
