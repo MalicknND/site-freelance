@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
     "Développeur web freelance : sites et applications performants pour indépendants, PME et startups. Réservez un appel gratuit.",
   email: "ndiayemalicksiguy@gmail.com",
   portfolio: "https://portfolio.msndiaye.com",
-  calendly: "https://calendly.com/placeholder",
+  calendly: "https://calendly.com/ndiayemalicksiguy/30min",
   positioning: "Développeur Web Freelance – React / Next.js / Node.js",
 };
 
@@ -37,7 +37,7 @@ export const TECH_STACK = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  github: "https://github.com/MalicknND",
+  linkedin: "https://www.linkedin.com/in/msnd/",
   portfolio: "https://portfolio.msndiaye.com",
 };
